@@ -1,0 +1,10 @@
+path: \Qt6\6.0.1\mingw81_64\bin
+.\qsb.exe --glsl "100 es,120,150" --hlsl 50 --msl 12 -o fastblur.frag.qsb fastblur.frag
+
+layout(std140, binding = 0) uniform buf {
+    // qt_Matrix and qt_Opacity must always be both present
+    // if the built-in vertex shader is used.
+    mat4 qt_Matrix;
+    float qt_Opacity;
+    ...
+};

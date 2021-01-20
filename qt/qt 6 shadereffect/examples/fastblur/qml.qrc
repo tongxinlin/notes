@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MyFastBlur.qml</file>
+        <file>fastblur_internal.frag</file>
+        <file>fastblur_internal.vert</file>
+        <file>fastblur.frag</file>
+        <file>fastblur.frag.qsb</file>
+        <file>fastblur_internal.frag.qsb</file>
+        <file>fastblur_internal.vert.qsb</file>
+        <file>qt-logo.png</file>
+    </qresource>
+</RCC>
