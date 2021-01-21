@@ -3,7 +3,7 @@
 ** antialiased version of squircle.qml
 ** (https://doc.qt.io/qt-5.12/qtquick-canvas-squircle-squircle-qml.html)
 **
-** all round functions are removed to increase precision
+** all round functions are removed in order to increase precision
 **
 ************************************************************************/
 import QtQuick 2.12
