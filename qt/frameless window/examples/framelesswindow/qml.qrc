@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main-macx.qml</file>
+        <file>TitleBar.qml</file>
+        <file>MainWindow.qml</file>
+        <file>main-windows.qml</file>
+    </qresource>
+</RCC>

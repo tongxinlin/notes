@@ -1,0 +1,31 @@
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QtQml>
+#include "framelesswindow.h"
+
+int main(int argc, char *argv[])
+{
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
+    QGuiApplication app(argc, argv);
+
+    qmlRegisterType<FramelessWindow>("Com.Tongxinlin.GUI", 1, 0, "FramelessWindow");
+
+    QQmlApplicationEngine engine;
+    QString urlStr;
+#ifdef Q_OS_WIN32
+    urlStr = QStringLiteral("qrc:/main-windows.qml");
+#elif defined Q_OS_MACOS
+    urlStr = QStringLiteral("qrc:/main-macx.qml");
+#endif
+    const QUrl url(urlStr);
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                     &app, [url](QObject *obj, const QUrl &objUrl) {
+        if (!obj && url == objUrl)
+            QCoreApplication::exit(-1);
+    }, Qt::QueuedConnection);
+    engine.load(url);
+
+    return app.exec();
+}
